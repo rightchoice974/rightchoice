@@ -9,121 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectItems = document.querySelectorAll('.project-item');
     const jobApplicationForm = document.getElementById('job-application');
     const sections = document.querySelectorAll('section');
-    const languageBtn = document.getElementById('language-btn');
-    const languageDropdown = document.getElementById('language-dropdown');
-    const languageOptions = document.querySelectorAll('.lang-option');
-    const pageContainer = document.getElementById('page-container');
-
-    // --- LANGUAGE SWITCHER ---
-    
-    // Set the default language
-    let currentLanguage = localStorage.getItem('language') || 'en';
-    
-    // Apply the saved language on page load
-    applyLanguage(currentLanguage);
-    
-    // Toggle language dropdown - FIXED EVENT HANDLER
-    if (languageBtn) {
-        languageBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            languageDropdown.classList.toggle('hidden');
-        });
-    }
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-        if (languageDropdown && !languageBtn.contains(e.target) && !languageDropdown.contains(e.target)) {
-            languageDropdown.classList.add('hidden');
-        }
-    });
-    
-    // Handle language selection
-    if (languageOptions) {
-        languageOptions.forEach(option => {
-            option.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                const lang = option.getAttribute('data-lang');
-                
-                // Only apply if different from current language
-                if (lang !== currentLanguage) {
-                    currentLanguage = lang;
-                    applyLanguage(lang);
-                    
-                    // Save preference
-                    localStorage.setItem('language', lang);
-                }
-                
-                // Hide dropdown
-                languageDropdown.classList.add('hidden');
-            });
-        });
-    }
-    
-    // Function to apply language changes
-    function applyLanguage(lang) {
-        // Update HTML lang and dir attributes
-        document.documentElement.lang = lang;
-        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-        
-        // Add appropriate text direction classes
-        if (lang === 'ar') {
-            pageContainer.classList.add('rtl-text');
-            
-            // Adjust any RTL specific elements
-            document.querySelectorAll('.mr-4').forEach(el => {
-                el.classList.replace('mr-4', 'ml-4');
-            });
-            
-            document.querySelectorAll('.ml-2').forEach(el => {
-                el.classList.replace('ml-2', 'mr-2');
-            });
-        } else {
-            pageContainer.classList.remove('rtl-text');
-            
-            // Revert RTL specific adjustments
-            document.querySelectorAll('.ml-4').forEach(el => {
-                el.classList.replace('ml-4', 'mr-4');
-            });
-            
-            document.querySelectorAll('.mr-2').forEach(el => {
-                el.classList.replace('mr-2', 'ml-2');
-            });
-        }
-        
-        // Apply translations
-        document.querySelectorAll('[data-translate-key]').forEach(element => {
-            const key = element.getAttribute('data-translate-key');
-            if (translations[lang] && translations[lang][key]) {
-                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    // For form elements
-                    if (element.getAttribute('placeholder')) {
-                        element.setAttribute('placeholder', translations[lang][key]);
-                    } else {
-                        element.value = translations[lang][key];
-                    }
-                } else {
-                    // For other elements
-                    element.innerHTML = translations[lang][key];
-                }
-            }
-        });
-        
-        // Update the current language display
-        const currentLangEl = document.querySelector('[data-translate-key="current-lang"]');
-        if (currentLangEl) {
-            currentLangEl.textContent = lang === 'ar' ? 'العربية' : 'English';
-        }
-    }
 
     // --- NAVIGATION ---
 
     // Toggle mobile menu
     navToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
-        navMenu.classList.toggle('hidden');
-        navMenu.classList.toggle('md:flex');
         const icon = navToggle.querySelector('i');
         icon.classList.toggle('fa-bars');
         icon.classList.toggle('fa-times');
@@ -134,8 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             if (navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
-                navMenu.classList.add('hidden');
-                navMenu.classList.add('md:flex');
                 const icon = navToggle.querySelector('i');
                 icon.classList.add('fa-bars');
                 icon.classList.remove('fa-times');
@@ -171,22 +60,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollY = window.scrollY;
         const navHeight = navbar.offsetHeight;
 
-        // 1. Change navbar background on scroll
+        // 1. Change navbar background
         if (scrollY > 50) {
-            navbar.classList.add('py-2');
-            navbar.classList.remove('py-4');
+            navbar.classList.add('nav-scrolled');
         } else {
-            navbar.classList.add('py-4');
-            navbar.classList.remove('py-2');
+            navbar.classList.remove('nav-scrolled');
         }
 
         // 2. Back to top button visibility
         if (scrollY > 300) {
-            backToTopButton.classList.add('opacity-100', 'visible');
-            backToTopButton.classList.remove('opacity-0', 'invisible', 'translate-y-5');
+            backToTopButton.classList.add('visible');
         } else {
-            backToTopButton.classList.remove('opacity-100', 'visible');
-            backToTopButton.classList.add('opacity-0', 'invisible', 'translate-y-5');
+            backToTopButton.classList.remove('visible');
         }
 
         // 3. Add active class to navigation based on scroll position
@@ -199,9 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         navLinks.forEach(link => {
-            link.classList.remove('text-primary');
+            link.classList.remove('active');
             if (link.getAttribute('href') === `#${currentSectionId}`) {
-                link.classList.add('text-primary');
+                link.classList.add('active');
             }
         });
     };
@@ -219,13 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             // Set active button
-            filterButtons.forEach(btn => {
-                btn.classList.remove('bg-primary', 'text-white');
-                btn.classList.add('bg-transparent', 'text-primary');
-            });
-            
-            button.classList.remove('bg-transparent', 'text-primary');
-            button.classList.add('bg-primary', 'text-white');
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
 
             const filterValue = button.getAttribute('data-filter');
 
@@ -265,12 +145,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (!hasValue) {
                     isValid = false;
-                    input.classList.add('border-red-500', 'shake');
-                    input.classList.remove('border-[#dbdbdb]');
+                    input.style.borderColor = '#ff3860';
+                    input.classList.add('shake');
                     setTimeout(() => input.classList.remove('shake'), 500);
                 } else {
-                    input.classList.remove('border-red-500');
-                    input.classList.add('border-[#dbdbdb]');
+                    input.style.borderColor = '#dbdbdb';
                 }
             });
 
@@ -279,14 +158,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const existingMessage = jobApplicationForm.querySelector('.success-message');
                 if(existingMessage) existingMessage.remove();
 
-                // Create success message with proper language
-                const successText = currentLanguage === 'ar' 
-                    ? "شكرًا لك! تم تقديم طلبك بنجاح." 
-                    : "Thank you! Your application has been submitted.";
-                
                 const successMessage = document.createElement('div');
-                successMessage.className = 'success-message bg-green-500 text-white p-4 rounded flex items-center gap-2 mt-4';
-                successMessage.innerHTML = `<i class="fas fa-check-circle"></i> ${successText}`;
+                successMessage.className = 'success-message';
+                successMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your application has been submitted.';
                 jobApplicationForm.appendChild(successMessage);
 
                 jobApplicationForm.reset();
@@ -301,8 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const allInputs = jobApplicationForm.querySelectorAll('input, textarea');
         allInputs.forEach(input => {
             input.addEventListener('input', () => {
-                input.classList.remove('border-red-500');
-                input.classList.add('border-[#dbdbdb]');
+                input.style.borderColor = '#dbdbdb';
             });
         });
     }
@@ -348,7 +221,4 @@ document.addEventListener('DOMContentLoaded', () => {
     elementsToAnimate.forEach(el => {
         appearOnScroll.observe(el);
     });
-    
-    // --- FOOTER DATE UPDATE ---
-    // Last updated: 2025-08-05 02:32:50 by AhamedShafeek
 });
