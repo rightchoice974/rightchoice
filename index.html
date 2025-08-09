@@ -1,156 +1,175 @@
 <!DOCTYPE html>
+<!-- Initial language is English, direction is Left-to-Right. JS will update this. -->
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Right Choice Contracting & Clean Services WLL</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Right Choice Contracting & Clean Services WLL | Qatar</title>
+    <meta name="description" content="Right Choice Contracting & Clean Services offers excellence in construction, facility management, MEP, and cleaning services in Doha, Qatar. Trusted since 2010.">
+    <meta name="keywords" content="Contracting Qatar, Cleaning Services Doha, Construction Company Qatar, Facility Management, MEP Services, Villa Construction, Labour Supply, Right Choice Contracting">
+    <meta name="author" content="Right Choice Contracting & Clean Services WLL">
+
+    <!-- Stylesheets and Fonts -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-        <!-- Navigation -->
-        <nav class="navbar" style="background-color: white; color: black; padding: 1rem 0;">
-            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-                <div class="logo">
-                    <a href="#home">
-                        <img src="RIGHT CHOICE CONTRACTING & CLEANING SERVICES (WLL).svg" alt="Right Choice Logo" style="height: 90px;">
-                    </a>
-                </div>
-                <div class="nav-toggle">
-                    <i class="fas fa-bars" style="color: black;"></i>
-                </div>
-                <ul class="nav-menu" style="list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0;">
-                    <li><a href="#home" style="color: black; text-decoration: none;" data-translate-key="nav-home">Home</a></li>
-                    <li><a href="#services" style="color: black; text-decoration: none;" data-translate-key="nav-services">Services</a></li>
-                    <li><a href="#team" style="color: black; text-decoration: none;" data-translate-key="nav-team">Our Team</a></li>
-                    <li><a href="#projects" style="color: black; text-decoration: none;" data-translate-key="nav-projects">Projects</a></li>
-                    <li><a href="#clients" style="color: black; text-decoration: none;" data-translate-key="nav-clients">Our Clients</a></li>
-                    <li><a href="#careers" style="color: black; text-decoration: none;" data-translate-key="nav-careers">Careers</a></li>
-                    <li><a href="#contact" style="color: black; text-decoration: none;" data-translate-key="nav-contact">Contact</a></li>
-                    <li><a href="#!" class="lang-switch" style="color: black; text-decoration: none;" data-translate-key="lang-switch">عربي</a></li>
-                </ul>
-            </div>
-        </nav>
+    <!-- Header contains the main navigation -->
+    <header class="navbar">
+        <nav class="container">
+            <a href="#home" class="logo">
+                <img src="RIGHT CHOICE CONTRACTING & CLEANING SERVICES (WLL).svg" alt="Right Choice Logo" style="height: 90px;">
+            </a>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
 
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link" data-translate-key="nav-home">Home</a></li>
+                <li><a href="#services" class="nav-link" data-translate-key="nav-services">Services</a></li>
+                <li><a href="#team" class="nav-link" data-translate-key="nav-team">Our Team</a></li>
+                <li><a href="#projects" class="nav-link" data-translate-key="nav-projects">Projects</a></li>
+                <li><a href="#clients" class="nav-link" data-translate-key="nav-clients">Our Clients</a></li>
+                <li><a href="#careers" class="nav-link" data-translate-key="nav-careers">Careers</a></li>
+                <li><a href="#contact" class="nav-link" data-translate-key="nav-contact">Contact</a></li>
+                <li><button class="lang-switch" data-translate-key="lang-switch">عربي</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content of the page -->
+    <main>
 
     <!-- Hero Section -->
-<section id="home" class="hero">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 data-translate-key="hero-title">Right Choice<br>Contracting</h1>
-                <h2 class="hero-tagline" data-translate-key="hero-subtitle">Trusted Since 2010 (Dubai) Now in Qatar</h2>
-                <p data-translate-key="hero-desc">Excellence in Construction & Facility Management Services</p>
-                <a href="#services" class="btn primary-btn" data-translate-key="hero-button">Explore Our Services</a>
-            </div>
-            <div class="gm-intro">
-                <div class="gm-image">
-                    <img src="gm.svg" alt="General Manager">
+    <section id="home" class="hero" role="region" aria-labelledby="hero-title-id">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="hero-tagline-small"></span>
+                    <h1 id="hero-title-id" data-translate-key="hero-title">Right Choice<br>Contracting</h1>
+                    <h2 class="hero-tagline" data-translate-key="hero-subtitle">Trusted Since 2010 (Dubai) Now in Qatar</h2>
+                    <p data-translate-key="hero-desc">Excellence in Construction & Facility Management Services</p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn primary-btn" data-translate-key="hero-button">Explore Our Services</a>
+                        <a href="#contact" class="btn outline-btn">Contact Us</a>
+                    </div>
                 </div>
-                <div class="gm-text">
-                    <h3 data-translate-key="gm-welcome">Welcome from Our General Manager</h3>
-                    <p data-translate-key="gm-message">"With over a decade of experience from our main branch in Dubai (Al Bakith Contracting WLL, est. 2010), we are proud to bring the same excellence to Qatar. Right Choice is committed to quality, safety, and timely delivery of every project."</p>
+                <div class="gm-intro">
+                    <div class="gm-image">
+                        <img src="gm.svg" alt="General Manager of Right Choice Contracting">
+                    </div>
+                    <div class="gm-text">
+                        <h3 data-translate-key="gm-welcome">Welcome from Our General Manager</h3>
+                        <p data-translate-key="gm-message">"With over a decade of experience from our main branch in Dubai (Al Bakith Contracting WLL, est. 2010), we are proud to bring the same excellence to Qatar. Right Choice is committed to quality, safety, and timely delivery of every project."</p>
+                        <div class="gm-signature">
+                            <span>Ahmed Al Bakith</span>
+                            <small>General Manager</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="stat-value">15+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-value">100+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-value">50+</span>
+                    <span class="stat-label">Satisfied Clients</span>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+        <div class="scroll-down">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services" class="services" role="region" aria-labelledby="services-title-id">
         <div class="container">
             <div class="section-header">
-                <h2 data-translate-key="services-title">Our Services</h2>
+                <span class="section-tag">What We Offer</span>
+                <h2 id="services-title-id" data-translate-key="services-title">Our Services</h2>
                 <p data-translate-key="services-subtitle">Comprehensive solutions for all your construction and facility management needs</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-building"></i></div>
-                    <h3 data-translate-key="service-construction">Construction</h3>
-                    <p data-translate-key="service-construction-desc">Residential & Commercial Projects (Villas & More)</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-home"></i></div>
-                    <h3 data-translate-key="service-villa">Villa Development</h3>
-                    <p data-translate-key="service-villa-desc">Custom villa design and construction services</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-users"></i></div>
-                    <h3 data-translate-key="service-labour">Labour Supply</h3>
-                    <p data-translate-key="service-labour-desc">Verified & Skilled Manpower</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-broom"></i></div>
-                    <h3 data-translate-key="service-cleaning">Cleaning Services</h3>
-                    <p data-translate-key="service-cleaning-desc">Office & Spider Cleaning Solutions</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-bolt"></i></div>
-                    <h3 data-translate-key="service-electrical">Electrical</h3>
-                    <p data-translate-key="service-electrical-desc">Complete electrical installation and maintenance</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-cogs"></i></div>
-                    <h3 data-translate-key="service-mechanical">Mechanical</h3>
-                    <p data-translate-key="service-mechanical-desc">HVAC and mechanical system solutions</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-faucet"></i></div>
-                    <h3 data-translate-key="service-plumbing">Plumbing</h3>
-                    <p data-translate-key="service-plumbing-desc">Installation and maintenance of plumbing systems</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
-                    <h3 data-translate-key="service-fitout">Fit-Out Interior</h3>
-                    <p data-translate-key="service-fitout-desc">All Types of Interior Works</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-hammer"></i></div>
-                    <h3 data-translate-key="service-demolition">Demolition</h3>
-                    <p data-translate-key="service-demolition-desc">Safe & Controlled Demolitions</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-truck-pickup"></i></div>
-                    <h3 data-translate-key="service-excavation">Excavation</h3>
-                    <p data-translate-key="service-excavation-desc">Groundwork & Earthmoving Solutions</p>
-                </div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-building"></i></div><h3 data-translate-key="service-construction">Construction</h3><p data-translate-key="service-construction-desc">Residential & Commercial Projects (Villas & More)</p><a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-home"></i></div><h3 data-translate-key="service-villa">Villa Development</h3><p data-translate-key="service-villa-desc">Custom villa design and construction services</p><a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-users"></i></div><h3 data-translate-key="service-labour">Labour Supply</h3><p data-translate-key="service-labour-desc">Verified & Skilled Manpower</p><a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-broom"></i></div><h3 data-translate-key="service-cleaning">Cleaning Services</h3><p data-translate-key="service-cleaning-desc">Office & Spider Cleaning Solutions</p><a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-bolt"></i></div><h3 data-translate-key="service-electrical">Electrical</h3><p data-translate-key="service-electrical-desc">Complete electrical installation and maintenance</p><a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-cogs"></i></div><h3 data-translate-key="service-mechanical">Mechanical</h3><p data-translate-key="service-mechanical-desc">HVAC and mechanical system solutions</p><a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-faucet"></i></div><h3 data-translate-key="service-plumbing">Plumbing</h3><p data-translate-key="service-plumbing-desc">Installation and maintenance of plumbing systems</p><a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-paint-roller"></i></div><h3 data-translate-key="service-fitout">Fit-Out Interior</h3><p data-translate-key="service-fitout-desc">All Types of Interior Works</p><a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-hammer"></i></div><h3 data-translate-key="service-demolition">Demolition</h3><p data-translate-key="service-demolition-desc">Safe & Controlled Demolitions</p><a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-truck-pickup"></i></div><h3 data-translate-key="service-excavation">Excavation</h3><p data-translate-key="service-excavation-desc">Groundwork & Earthmoving Solutions</p><a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
             </div>
         </div>
     </section>
 
     <!-- Team Stats Section -->
-    <section id="team" class="team-stats">
+    <section id="team" class="team-stats" role="region" aria-labelledby="team-title-id">
         <div class="container">
             <div class="section-header light">
-                <h2 data-translate-key="team-title">Our Team</h2>
+                <span class="section-tag">Our Workforce</span>
+                <h2 id="team-title-id" data-translate-key="team-title">Our Team</h2>
                 <p data-translate-key="team-subtitle">We are proud of our dedicated workforce, combining efficiency, skill, and a commitment to safety</p>
             </div>
             <div class="stats-container">
                 <div class="stat-card">
                     <div class="stat-number">30+</div>
                     <div class="stat-title" data-translate-key="team-stat1">Skilled Workers</div>
+                    <div class="stat-icon"><i class="fas fa-hard-hat"></i></div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">20+</div>
                     <div class="stat-title" data-translate-key="team-stat2">Administrative & Site Staff</div>
+                    <div class="stat-icon"><i class="fas fa-user-tie"></i></div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">5+</div>
                     <div class="stat-title" data-translate-key="team-stat3">Ongoing Projects</div>
+                    <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                </div>
+            </div>
+            <div class="team-values">
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-medal"></i></div>
+                    <h3>Excellence</h3>
+                    <p>We strive for excellence in every aspect of our work</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Safety</h3>
+                    <p>Safety is our top priority on every project</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Integrity</h3>
+                    <p>We operate with honesty and transparency</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Gallery -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects" role="region" aria-labelledby="projects-title-id">
         <div class="container">
             <div class="section-header">
-                <h2 data-translate-key="projects-title">Our Projects</h2>
+                <span class="section-tag">Our Portfolio</span>
+                <h2 id="projects-title-id" data-translate-key="projects-title">Our Projects</h2>
                 <p data-translate-key="projects-subtitle">Showcasing our expertise and quality through completed works</p>
             </div>
             <div class="project-filter">
@@ -161,123 +180,207 @@
                 <button class="filter-btn" data-filter="interior" data-translate-key="filter-interior">Interior</button>
             </div>
             <div class="project-gallery">
-                 <div class="project-item construction">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5" alt="Construction Project">
+                <div class="project-item construction">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5" alt="Luxury Villa Construction Project">
                     <div class="project-overlay">
+                        <span class="project-category">Residential</span>
                         <h3>Luxury Villa Construction</h3>
                         <p>Residential Project in Doha</p>
+                        <a href="#" class="project-link">View Details</a>
                     </div>
                 </div>
                 <div class="project-item cleaning">
-                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Cleaning Project">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Office Cleaning Project">
                     <div class="project-overlay">
+                        <span class="project-category">Commercial</span>
                         <h3>Office Cleaning</h3>
                         <p>Corporate Office Complex</p>
+                        <a href="#" class="project-link">View Details</a>
                     </div>
                 </div>
                 <div class="project-item mep">
-                    <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a" alt="MEP Project">
+                    <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a" alt="MEP Electrical Installation Project">
                     <div class="project-overlay">
+                        <span class="project-category">MEP</span>
                         <h3>Electrical Installation</h3>
                         <p>Commercial Building</p>
+                        <a href="#" class="project-link">View Details</a>
                     </div>
                 </div>
                 <div class="project-item interior">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Interior Project">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Modern Apartment Fit-Out Project">
                     <div class="project-overlay">
+                        <span class="project-category">Interior</span>
                         <h3>Modern Apartment Fit-Out</h3>
                         <p>Residential Interior Design</p>
+                        <a href="#" class="project-link">View Details</a>
                     </div>
                 </div>
                 <div class="project-item construction">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd" alt="Construction Project">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd" alt="Commercial Building Construction Project">
                     <div class="project-overlay">
+                        <span class="project-category">Commercial</span>
                         <h3>Commercial Building</h3>
                         <p>Multi-story Office Complex</p>
+                        <a href="#" class="project-link">View Details</a>
                     </div>
                 </div>
                 <div class="project-item cleaning">
-                    <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac" alt="Cleaning Project">
+                    <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac" alt="High-rise Spider Cleaning Project">
                     <div class="project-overlay">
+                        <span class="project-category">Cleaning</span>
                         <h3>Spider Cleaning</h3>
                         <p>High-rise Building</p>
+                        <a href="#" class="project-link">View Details</a>
                     </div>
                 </div>
+            </div>
+            <div class="project-cta">
+                <p>Looking for more examples of our work?</p>
+                <a href="#contact" class="btn primary-btn">Request Portfolio</a>
             </div>
         </div>
     </section>
 
     <!-- Clients Section -->
-    <section id="clients" class="clients">
+    <section id="clients" class="clients" role="region" aria-labelledby="clients-title-id">
         <div class="container">
             <div class="section-header light">
-                <h2 data-translate-key="clients-title">Our Valued Clients</h2>
+                <span class="section-tag">Partnerships</span>
+                <h2 id="clients-title-id" data-translate-key="clients-title">Our Valued Clients</h2>
                 <p data-translate-key="clients-subtitle">We are honored to have worked with some of the leading names in the industry</p>
+            </div>
+            <div class="clients-testimonial">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Right Choice Contracting delivered exceptional quality and professionalism throughout our project. Their attention to detail and commitment to timelines made them the perfect partner."</p>
+                    <div class="testimonial-author">
+                        <span>Ahmed Al-Mansour</span>
+                        <small>Project Manager, Qatar University</small>
+                    </div>
+                </div>
             </div>
             <div class="logo-slider">
                 <div class="logo-track">
-                    <div class="logo-slide"><img src="HBK-v1.svg" alt="HBK"></div>
-                    <div class="logo-slide"><img src="logosuez169x44.svg" alt="Suez"></div>
-                    <div class="logo-slide"><img src="MACEQATAR.webp" alt="Mace Qatar"></div>
-                    <div class="logo-slide"><img src="Paris_New_Logo_white_ec89981945.svg" alt="Paris New Logo"></div>
-                    <div class="logo-slide"><img src="qulogo.png" alt="Qatar University"></div>
-                    <div class="logo-slide"><img src="Ramaco-Simple-full-black-text.png" alt="Ramaco"></div>
-                    <div class="logo-slide"><img src="ascologo.png" alt="ASCO"></div>
-                    <div class="logo-slide"><img src="core-engineering-and-construction-logo.png" alt="Core Engineering and Construction"></div>
-                    <div class="logo-slide"><img src="metitologo.png" alt="Metito"></div>
-                    <div class="logo-slide"><img src="samsung-engineering-logo-e77f.png" alt="Samsung Engineering"></div>
+                    <div class="logo-slide"><img src="HBK-v1.svg" alt="HBK Logo"></div>
+                    <div class="logo-slide"><img src="logosuez169x44.svg" alt="Suez Logo"></div>
+                    <div class="logo-slide"><img src="MACEQATAR.webp" alt="Mace Qatar Logo"></div>
+                    <div class="logo-slide"><img src="Paris_New_Logo_white_ec89981945.svg" alt="Paris Group Logo"></div>
+                    <div class="logo-slide"><img src="qulogo.png" alt="Qatar University Logo"></div>
+                    <div class="logo-slide"><img src="Ramaco-Simple-full-black-text.png" alt="Ramaco Logo"></div>
+                    <div class="logo-slide"><img src="ascologo.png" alt="ASCO Logo"></div>
+                    <div class="logo-slide"><img src="core-engineering-and-construction-logo.png" alt="Core Engineering and Construction Logo"></div>
+                    <div class="logo-slide"><img src="metitologo.png" alt="Metito Logo"></div>
+                    <div class="logo-slide"><img src="samsung-engineering-logo-e77f.png" alt="Samsung Engineering Logo"></div>
                     <!-- Duplicate logos for seamless scroll -->
-                    <div class="logo-slide"><img src="HBK-v1.svg" alt="HBK"></div>
-                    <div class="logo-slide"><img src="logosuez169x44.svg" alt="Suez"></div>
-                    <div class="logo-slide"><img src="MACEQATAR.webp" alt="Mace Qatar"></div>
-                    <div class="logo-slide"><img src="Paris_New_Logo_white_ec89981945.svg" alt="Paris New Logo"></div>
-                    <div class="logo-slide"><img src="qulogo.png" alt="Qatar University"></div>
-                    <div class="logo-slide"><img src="Ramaco-Simple-full-black-text.png" alt="Ramaco"></div>
-                    <div class="logo-slide"><img src="ascologo.png" alt="ASCO"></div>
-                    <div class="logo-slide"><img src="core-engineering-and-construction-logo.png" alt="Core Engineering and Construction"></div>
-                    <div class="logo-slide"><img src="metitologo.png" alt="Metito"></div>
-                    <div class="logo-slide"><img src="samsung-engineering-logo-e77f.png" alt="Samsung Engineering"></div>
+                    <div class="logo-slide"><img src="HBK-v1.svg" alt="HBK Logo"></div>
+                    <div class="logo-slide"><img src="logosuez169x44.svg" alt="Suez Logo"></div>
+                    <div class="logo-slide"><img src="MACEQATAR.webp" alt="Mace Qatar Logo"></div>
+                    <div class="logo-slide"><img src="Paris_New_Logo_white_ec89981945.svg" alt="Paris Group Logo"></div>
+                    <div class="logo-slide"><img src="qulogo.png" alt="Qatar University Logo"></div>
+                    <div class="logo-slide"><img src="Ramaco-Simple-full-black-text.png" alt="Ramaco Logo"></div>
+                    <div class="logo-slide"><img src="ascologo.png" alt="ASCO Logo"></div>
+                    <div class="logo-slide"><img src="core-engineering-and-construction-logo.png" alt="Core Engineering and Construction Logo"></div>
+                    <div class="logo-slide"><img src="metitologo.png" alt="Metito Logo"></div>
+                    <div class="logo-slide"><img src="samsung-engineering-logo-e77f.png" alt="Samsung Engineering Logo"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Careers Section -->
-    <section id="careers" class="careers">
+    <section id="careers" class="careers" role="region" aria-labelledby="careers-title-id">
         <div class="container">
             <div class="section-header">
-                <h2 data-translate-key="careers-title">Careers at Right Choice</h2>
+                <span class="section-tag">Join Us</span>
+                <h2 id="careers-title-id" data-translate-key="careers-title">Careers at Right Choice</h2>
                 <p data-translate-key="careers-subtitle">Join Our Growing Team in Qatar!</p>
             </div>
             <div class="careers-content">
                 <div class="careers-text">
                     <p data-translate-key="careers-p1">We are always looking for skilled workers and staff who want to grow with us. Right Choice offers competitive compensation, professional growth opportunities, and a collaborative work environment.</p>
                     <p data-translate-key="careers-p2">Whether you're an experienced professional or just starting your career, we welcome dedicated individuals who share our commitment to quality and excellence.</p>
+                    
+                    <div class="career-benefits">
+                        <h3>Why Join Us?</h3>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check-circle"></i> Competitive Salaries & Benefits</li>
+                            <li><i class="fas fa-check-circle"></i> Career Growth Opportunities</li>
+                            <li><i class="fas fa-check-circle"></i> Professional Development</li>
+                            <li><i class="fas fa-check-circle"></i> Diverse & Inclusive Environment</li>
+                            <li><i class="fas fa-check-circle"></i> Work on Prestigious Projects</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="open-positions">
+                        <h3>Open Positions</h3>
+                        <div class="position-card">
+                            <h4>Project Manager</h4>
+                            <p>Leading construction projects from inception to completion.</p>
+                        </div>
+                        <div class="position-card">
+                            <h4>Civil Engineer</h4>
+                            <p>Overseeing structural aspects of construction projects.</p>
+                        </div>
+                        <div class="position-card">
+                            <h4>MEP Specialist</h4>
+                            <p>Managing mechanical, electrical, and plumbing systems.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="application-form">
                     <h3 data-translate-key="form-title">Apply Now</h3>
-                    <form id="job-application">
+                    <form id="job-application-form">
                         <div class="form-group">
                             <label for="name" data-translate-key="form-name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="position" data-translate-key="form-position">Position Applying For</label>
-                            <input type="text" id="position" name="position" required>
+                            <div class="input-wrapper">
+                                <i class="fas fa-briefcase"></i>
+                                <input type="text" id="position" name="position" required placeholder="Enter position title">
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="contact" data-translate-key="form-contact">Contact Number</label>
-                            <input type="tel" id="contact" name="contact" required>
+                            <label for="contact-number" data-translate-key="form-contact">Contact Number</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="contact-number" name="contact" required placeholder="+974 XXXX XXXX">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-translate-key="form-email">Email Address</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="cv" data-translate-key="form-cv">CV Upload</label>
-                            <input type="file" id="cv" name="cv" required>
+                            <div class="file-upload-wrapper">
+                                <input type="file" id="cv" name="cv" required accept=".pdf,.doc,.docx">
+                                <div class="file-upload-ui">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span class="file-name">No file selected</span>
+                                    <button type="button" class="browse-btn">Browse</button>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="message" data-translate-key="form-message">Message</label>
-                            <textarea id="message" name="message" rows="4"></textarea>
+                            <div class="input-wrapper textarea-wrapper">
+                                <i class="fas fa-comment-alt"></i>
+                                <textarea id="message" name="message" rows="4" placeholder="Tell us about your experience and why you want to join our team"></textarea>
+                            </div>
                         </div>
-                        <button type="submit" class="btn primary-btn" data-translate-key="form-submit">Submit Application</button>
+                        <div class="form-actions">
+                            <button type="submit" class="btn primary-btn" data-translate-key="form-submit">Submit Application</button>
+                        </div>
+                        <div class="form-message-area"></div>
                     </form>
                 </div>
             </div>
@@ -285,10 +388,11 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" role="region" aria-labelledby="contact-title-id">
         <div class="container">
             <div class="section-header light">
-                <h2 data-translate-key="contact-title">Contact Us</h2>
+                <span class="section-tag">Get in Touch</span>
+                <h2 id="contact-title-id" data-translate-key="contact-title">Contact Us</h2>
                 <p data-translate-key="contact-subtitle">Get in touch with our team for inquiries or project discussions</p>
             </div>
             <div class="contact-content">
@@ -325,29 +429,178 @@
                         <i class="fas fa-clock"></i>
                         <div>
                             <h3 data-translate-key="contact-hours">Working Hours</h3>
-                            <p data-translate-key="contact-hours-p">Saturday to Wednesday 8am - 5pm<br>
-                                Thursday 8am - 2pm <br>
-                                Friday - Holiday</p>
+                            <p data-translate-key="contact-hours-p">Saturday to Wednesday 8am - 5pm<br>Thursday 8am - 2pm<br>Friday - Holiday</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h3>Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115586.83792243399!2d51.459369705224614!3d25.285653899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c534ffdce87f%3A0x44d9319f78cfd4b1!2sDoha%2C%20Qatar!5e0!3m2!1sen!2s!4v1656502214350!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="contact-form-wrapper">
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" name="name" placeholder="Your Name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-envelope"></i>
+                                        <input type="email" name="email" placeholder="Your Email" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-wrapper">
+                                    <i class="fas fa-pen"></i>
+                                    <input type="text" name="subject" placeholder="Subject" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-wrapper textarea-wrapper">
+                                    <i class="fas fa-comment-alt"></i>
+                                    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn primary-btn">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115586.83792243399!2d51.459369705224614!3d25.285653899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c534ffdce87f%3A0x44d9319f78cfd4b1!2sDoha%2C%20Qatar!5e0!3m2!1sen!2s!4v1656502214350!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Location of Right Choice Contracting in Doha, Qatar"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    </main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path fill="var(--primary-color)" fill-opacity="0.1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
+        </svg>
+    </div>
+    <div class="footer-content">
         <div class="container">
-            <p data-translate-key="footer-text">© 2024 Right Choice Contracting & Clean Services WLL – Qatar | Powered by Al Bakith Contracting WLL – Dubai | Since 2010</p>
+            <div class="footer-primary">
+                <div class="footer-about">
+                    <img src="RIGHT CHOICE CONTRACTING & CLEANING SERVICES (WLL).svg" alt="Right Choice Logo" class="footer-logo">
+                    <p>Right Choice Contracting & Clean Services WLL is your trusted partner for construction, facility management, and cleaning services in Qatar.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-nav">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="#home"><i class="fas fa-chevron-right"></i>Home</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i>Services</a></li>
+                            <li><a href="#projects"><i class="fas fa-chevron-right"></i>Projects</a></li>
+                            <li><a href="#careers"><i class="fas fa-chevron-right"></i>Careers</a></li>
+                            <li><a href="#contact"><i class="fas fa-chevron-right"></i>Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Our Services</h3>
+                        <ul class="footer-links">
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i>Construction</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i>MEP Works</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i>Cleaning Services</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i>Labour Supply</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i>Interior Fit-Out</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Contact Info</h3>
+                        <ul class="footer-contact-list">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span>Office Location</span>
+                                    <p>Doha, Qatar</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <span>Call Us</span>
+                                    <p>+974 XXXX XXXX</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <span>Email Us</span>
+                                    <p>info@rightchoicecontracting.com</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Newsletter</h3>
+                        <p class="newsletter-text">Subscribe to our newsletter for updates on our latest projects and services.</p>
+                        <form class="newsletter-form">
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email Address" required>
+                                <button type="submit" class="btn-subscribe">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="certification-badges">
+                            <img src="https://via.placeholder.com/40" alt="ISO Certified">
+                            <img src="https://via.placeholder.com/40" alt="Quality Assured">
+                            <img src="https://via.placeholder.com/40" alt="Safety First">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-content">
+                <p data-translate-key="footer-text">© 2025 Right Choice Contracting & Clean Services WLL – Qatar | Powered by Al Bakith Contracting WLL – Dubai | Since 2010</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <span class="divider">|</span>
+                    <a href="#">Terms of Service</a>
+                    <span class="divider">|</span>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+    <button id="back-to-top" title="Back to Top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
+    <!-- Main script file -->
     <script src="script.js"></script>
 </body>
 </html>
