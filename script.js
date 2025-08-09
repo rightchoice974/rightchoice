@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'clients-title': 'Our Valued Clients', 'clients-subtitle': 'We are honored to have worked with some of the leading names in the industry',
             'careers-title': 'Careers at Right Choice', 'careers-subtitle': 'Join Our Growing Team in Qatar!',
             'careers-p1': 'We are always looking for skilled workers and staff who want to grow with us. Right Choice offers competitive compensation, professional growth opportunities, and a collaborative work environment.', 'careers-p2': 'Whether you\'re an experienced professional or just starting your career, we welcome dedicated individuals who share our commitment to quality and excellence.',
-            'form-title': 'Apply Now', 'form-name': 'Full Name', 'form-position': 'Position Applying For', 'form-contact': 'Contact Number', 'form-email': 'Email Address', 'form-cv': 'CV Upload', 'form-message': 'Message', 'form-submit': 'Submit Application', 'form-submitting': 'Submitting...', 'form-success': 'Thank you! Your application has been submitted successfully.', 'form-error': 'An error occurred. Please try again.',
+            'form-title': 'Apply Now', 'form-name': 'Full Name', 'form-position': 'Position Applying For', 'form-contact': 'Contact Number', 'form-email': 'Email Address', 'form-cv': 'CV Upload', 'form-message': 'Message', 'form-submit': 'Submit Application', 'form-submitting': 'Submitting...', 'form-success': 'Thank you! Your application has been submitted successfully.', 'form-error': 'An error occurred. Please try again.', 'contact-form-success': 'Thank you! Your message has been sent successfully.', 'form-validation-error': 'Please fill in all required fields.',
             'contact-title': 'Contact Us', 'contact-subtitle': 'Get in touch with our team for inquiries or project discussions',
             'contact-location': 'Location', 'contact-email': 'Email', 'contact-website': 'Website', 'contact-phone': 'Phone', 'contact-hours': 'Working Hours', 'contact-hours-p': 'Saturday to Wednesday 8am - 5pm<br>Thursday 8am - 2pm<br>Friday - Holiday',
             'footer-text': '© 2024 Right Choice Contracting & Clean Services WLL – Qatar | Powered by Al Bakith Contracting WLL – Dubai | Since 2010',
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'clients-title': 'عملاؤنا الكرام', 'clients-subtitle': 'نتشرف بالعمل مع بعض الأسماء الرائدة في هذا المجال',
             'careers-title': 'وظائف في رايت تشويس', 'careers-subtitle': 'انضم إلى فريقنا المتنامي في قطر!',
             'careers-p1': 'نبحث دائمًا عن العمال المهرة والموظفين الذين يرغبون في النمو معنا. تقدم رايت تشويس رواتب تنافسية وفرصًا للنمو المهني وبيئة عمل تعاونية.', 'careers-p2': 'سواء كنت محترفًا ذا خبرة أو في بداية حياتك المهنية، نرحب بالأفراد المخلصين الذين يشاركوننا التزامنا بالجودة والتميز.',
-            'form-title': 'قدم الآن', 'form-name': 'الاسم الكامل', 'form-position': 'الوظيفة المتقدم لها', 'form-contact': 'رقم الاتصال', 'form-email': 'البريد الإلكتروني', 'form-cv': 'تحميل السيرة الذاتية', 'form-message': 'رسالة', 'form-submit': 'إرسال الطلب', 'form-submitting': 'جاري الإرسال...', 'form-success': 'شكرًا لك! تم إرسال طلبك بنجاح.', 'form-error': 'حدث خطأ. يرجى المحاولة مرة أخرى.',
+            'form-title': 'قدم الآن', 'form-name': 'الاسم الكامل', 'form-position': 'الوظيفة المتقدم لها', 'form-contact': 'رقم الاتصال', 'form-email': 'البريد الإلكتروني', 'form-cv': 'تحميل السيرة الذاتية', 'form-message': 'رسالة', 'form-submit': 'إرسال الطلب', 'form-submitting': 'جاري الإرسال...', 'form-success': 'شكرًا لك! تم إرسال طلبك بنجاح.', 'form-error': 'حدث خطأ. يرجى المحاولة مرة أخرى.', 'contact-form-success': 'شكرًا لك! تم إرسال رسالتك بنجاح.', 'form-validation-error': 'يرجى ملء جميع الحقول المطلوبة.',
             'contact-title': 'اتصل بنا', 'contact-subtitle': 'تواصل مع فريقنا للاستفسارات أو لمناقشة المشاريع',
             'contact-location': 'الموقع', 'contact-email': 'البريد الإلكتروني', 'contact-website': 'الموقع الإلكتروني', 'contact-phone': 'الهاتف', 'contact-hours': 'ساعات العمل', 'contact-hours-p': 'السبت إلى الأربعاء 8 صباحًا - 5 مساءً<br>الخميس 8 صباحًا - 2 مساءً<br>الجمعة - عطلة',
             'footer-text': '© 2024 رايت تشويس للمقاولات وخدمات التنظيف ذ.م.م - قطر | بدعم من البقيث للمقاولات ذ.م.م - دبي | منذ 2010',
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.style.transform = 'scale(0.8)';
                      setTimeout(() => {
                         item.style.display = 'none';
-                    }, 400); 
+                    }, 300); // Corrected from 400 to match CSS transition
                 }
             });
         });
@@ -206,11 +206,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const fileName = e.target.files[0] ? e.target.files[0].name : 'No file selected';
             fileNameDisplay.textContent = fileName;
             
-            // Add a class to indicate a file has been selected
             fileNameDisplay.closest('.file-upload-ui').classList.toggle('has-file', e.target.files.length > 0);
         });
         
-        browseBtn.addEventListener('click', () => {
+        browseBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             fileInput.click();
         });
     }
@@ -223,8 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const showFormMessage = (type, messageText) => {
             messageArea.innerHTML = `<div class="form-feedback ${type}"><i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-times-circle'}"></i> ${messageText}</div>`;
-            
-            // Scroll to message
             messageArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         };
         
@@ -237,6 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clearFormErrors();
             messageArea.innerHTML = '';
             let isValid = true;
+            const currentLang = document.documentElement.lang;
             
             const requiredFields = form.querySelectorAll('[required]');
             requiredFields.forEach(input => {
@@ -244,64 +243,62 @@ document.addEventListener('DOMContentLoaded', () => {
                 const hasValue = isFile ? input.files.length > 0 : input.value.trim() !== '';
                 if (!hasValue) {
                     isValid = false;
-                    input.classList.add('error');
+                    const fieldWithError = input.closest('.form-group') || input;
+                    fieldWithError.classList.add('error');
                     
-                    // For file inputs, add error class to the UI element
-                    if (isFile && input.nextElementSibling) {
-                        input.nextElementSibling.classList.add('error');
+                    if(isFile) {
+                        input.closest('.file-upload-wrapper').querySelector('.file-upload-ui').classList.add('error');
                     }
                 }
             });
 
             if (isValid) {
                 const originalButtonText = submitButton.textContent;
+                const submittingText = translations[currentLang]['form-submitting'] || 'Submitting...';
                 submitButton.disabled = true;
-                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                submitButton.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${submittingText}`;
                 
                 try {
-                    // Simulate an API call
                     await new Promise(resolve => setTimeout(resolve, 1500));
                     
-                    showFormMessage('success', form.id === 'job-application-form' ? 
-                        'Thank you! Your application has been submitted successfully.' : 
-                        'Thank you! Your message has been sent successfully.');
+                    const successKey = form.id === 'job-application-form' ? 'form-success' : 'contact-form-success';
+                    const successMessage = translations[currentLang][successKey] || 'Success!';
+                    showFormMessage('success', successMessage);
+
                     form.reset();
                     
-                    // Reset file input display if it exists
                     if (fileNameDisplay) {
                         fileNameDisplay.textContent = 'No file selected';
                         fileNameDisplay.closest('.file-upload-ui').classList.remove('has-file');
                     }
                 } catch (error) {
-                    showFormMessage('error', 'An error occurred. Please try again.');
+                    const errorMessage = translations[currentLang]['form-error'] || 'An error occurred. Please try again.';
+                    showFormMessage('error', errorMessage);
                 } finally {
                     submitButton.disabled = false;
                     submitButton.textContent = originalButtonText;
                 }
             } else {
-                showFormMessage('error', 'Please fill in all required fields.');
+                const validationErrorMessage = translations[currentLang]['form-validation-error'] || 'Please fill in all required fields.';
+                showFormMessage('error', validationErrorMessage);
             }
         });
 
         form.addEventListener('input', (e) => {
-            if (e.target.classList.contains('error')) {
-                e.target.classList.remove('error');
-                
-                // For file inputs, also remove error from UI element
-                if (e.target.type === 'file' && e.target.nextElementSibling) {
-                    e.target.nextElementSibling.classList.remove('error');
-                }
+            if (e.target.closest('.error')) {
+                e.target.closest('.error').classList.remove('error');
+            }
+             if (e.target.type === 'file' && e.target.closest('.file-upload-wrapper').querySelector('.error')) {
+                e.target.closest('.file-upload-wrapper').querySelector('.error').classList.remove('error');
             }
         });
     };
 
-    // Initialize form handling for both forms
     if (jobApplicationForm) {
         handleFormSubmit(jobApplicationForm, jobApplicationForm.querySelector('.form-message-area'));
     }
     
     if (contactForm) {
-        // Create message area if not exists
         let messageArea = contactForm.querySelector('.form-message-area');
         if (!messageArea) {
             messageArea = document.createElement('div');
@@ -314,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- ANIMATION ON SCROLL (INTERSECTION OBSERVER) ---
     const elementsToAnimate = document.querySelectorAll('.service-card, .stat-card, .contact-item, .project-item, .value-item');
     elementsToAnimate.forEach((el, index) => {
-        el.style.setProperty('--i', index % 5 + 1); // Stagger animation delay
+        el.style.setProperty('--i', index % 5 + 1);
         
         if (el.classList.contains('service-card')) {
             el.style.transform = 'translateY(30px)';
@@ -348,9 +345,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const initializePage = () => {
         const savedLang = localStorage.getItem('preferredLanguage') || 'en';
         applyTranslations(savedLang);
-        handleScroll(); // Run on load to set initial states
+        handleScroll();
         
-        // Initialize file upload display
         if (fileInput && fileInput.files.length > 0 && fileNameDisplay) {
             fileNameDisplay.textContent = fileInput.files[0].name;
             fileNameDisplay.closest('.file-upload-ui').classList.add('has-file');
