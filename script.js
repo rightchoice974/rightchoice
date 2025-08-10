@@ -1,16 +1,6 @@
 /*
     Right Choice Contracting - Main Script
-    Version: 3.0 (Enhanced for Premium UI)
-    
-    Features:
-    - Mobile Navigation Toggle with Body Scroll Lock
-    - Smooth Scrolling with Offset for Fixed Navbar
-    - Dynamic Active Navigation Link Highlighting
-    - Scroll-based Animations (Intersection Observer)
-    - Project Gallery Filtering
-    - Advanced Form Handling (Validation, Async Simulation)
-    - Premium Form Interactions (File Upload UI)
-    - Fully Functional Language Switcher (EN/AR) with localStorage persistence
+    Version: 3.1 (Final with Mobile Optimizations)
 */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -42,15 +32,15 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero-title': 'Right Choice<br>Contracting', 'hero-subtitle': 'Trusted Since 2010 (Dubai) Now in Qatar', 'hero-desc': 'Excellence in Construction & Facility Management Services', 'hero-button': 'Explore Our Services',
             'gm-welcome': 'Welcome from Our General Manager', 'gm-message': '"With over a decade of experience from our main branch in Dubai (Al Bakith Contracting WLL, est. 2010), we are proud to bring the same excellence to Qatar. Right Choice is committed to quality, safety, and timely delivery of every project."',
             'services-title': 'Our Services', 'services-subtitle': 'Comprehensive solutions for all your construction and facility management needs',
-            'service-construction': 'Construction', 'service-construction-desc': 'Residential & Commercial Projects (Villas & More)', 'service-villa': 'Villa Development', 'service-villa-desc': 'Custom villa design and construction services', 'service-labour': 'Labour Supply', 'service-labour-desc': 'Verified & Skilled Manpower', 'service-cleaning': 'Cleaning Services', 'service-cleaning-desc': 'Office & Spider Cleaning Solutions', 'service-electrical': 'Electrical', 'service-electrical-desc': 'Complete electrical installation and maintenance', 'service-mechanical': 'Mechanical', 'service-mechanical-desc': 'HVAC and mechanical system solutions', 'service-plumbing': 'Plumbing', 'service-plumbing-desc': 'Installation and maintenance of plumbing systems', 'service-fitout': 'Fit-Out Interior', 'service-fitout-desc': 'All Types of Interior Works', 'service-demolition': 'Demolition', 'service-demolition-desc': 'Safe & Controlled Demolitions', 'service-excavation': 'Excavation', 'service-excavation-desc': 'Groundwork & Earthmoving Solutions',
+            'service-construction': 'Construction', 'service-construction-desc': 'Residential & Commercial Projects', 'service-villa': 'Villa Development', 'service-villa-desc': 'Custom Villa Design & Construction', 'service-labour': 'Labour Supply', 'service-labour-desc': 'Verified & Skilled Manpower', 'service-cleaning': 'Cleaning Services', 'service-cleaning-desc': 'Office & Spider Cleaning Solutions', 'service-electrical': 'Electrical', 'service-electrical-desc': 'Complete Installation & Maintenance', 'service-mechanical': 'Mechanical', 'service-mechanical-desc': 'HVAC & Mechanical System Solutions', 'service-plumbing': 'Plumbing', 'service-plumbing-desc': 'Installation & Maintenance of Systems', 'service-fitout': 'Fit-Out Interior', 'service-fitout-desc': 'All Types of Interior Works', 'service-demolition': 'Demolition', 'service-demolition-desc': 'Safe & Controlled Demolitions', 'service-excavation': 'Excavation', 'service-excavation-desc': 'Groundwork & Earthmoving Solutions',
             'team-title': 'Our Team', 'team-subtitle': 'We are proud of our dedicated workforce, combining efficiency, skill, and a commitment to safety',
             'team-stat1': 'Skilled Workers', 'team-stat2': 'Administrative & Site Staff', 'team-stat3': 'Ongoing Projects',
             'projects-title': 'Our Projects', 'projects-subtitle': 'Showcasing our expertise and quality through completed works',
             'filter-all': 'All', 'filter-construction': 'Construction', 'filter-cleaning': 'Cleaning', 'filter-mep': 'MEP Works', 'filter-interior': 'Interior',
             'clients-title': 'Our Valued Clients', 'clients-subtitle': 'We are honored to have worked with some of the leading names in the industry',
             'careers-title': 'Careers at Right Choice', 'careers-subtitle': 'Join Our Growing Team in Qatar!',
-            'careers-p1': 'We are always looking for skilled workers and staff who want to grow with us. Right Choice offers competitive compensation, professional growth opportunities, and a collaborative work environment.', 'careers-p2': 'Whether you\'re an experienced professional or just starting your career, we welcome dedicated individuals who share our commitment to quality and excellence.',
-            'form-title': 'Apply Now', 'form-name': 'Full Name', 'form-position': 'Position Applying For', 'form-contact': 'Contact Number', 'form-email': 'Email Address', 'form-cv': 'CV Upload', 'form-message': 'Message', 'form-submit': 'Submit Application', 'form-submitting': 'Submitting...', 'form-success': 'Thank you! Your application has been submitted successfully.', 'form-error': 'An error occurred. Please try again.', 'contact-form-success': 'Thank you! Your message has been sent successfully.', 'form-validation-error': 'Please fill in all required fields.',
+            'careers-p1': 'We are always looking for talented professionals to join our team. If you are passionate about construction and dedicated to excellence, we invite you to submit your CV for our consideration.',
+            'form-title': 'Submit Your CV', 'form-name': 'Full Name', 'form-contact': 'Contact Number', 'form-email': 'Email Address', 'form-cv': 'CV Upload (PDF, DOC, DOCX)', 'form-submit': 'Submit Application', 'form-submitting': 'Submitting...', 'form-success': 'Thank you! Your application has been submitted successfully.', 'form-error': 'An error occurred. Please try again.', 'contact-form-success': 'Thank you! Your message has been sent successfully.', 'form-validation-error': 'Please fill in all required fields.',
             'contact-title': 'Contact Us', 'contact-subtitle': 'Get in touch with our team for inquiries or project discussions',
             'contact-location': 'Location', 'contact-email': 'Email', 'contact-website': 'Website', 'contact-phone': 'Phone', 'contact-hours': 'Working Hours', 'contact-hours-p': 'Saturday to Wednesday 8am - 5pm<br>Thursday 8am - 2pm<br>Friday - Holiday',
             'footer-text': '© 2024 Right Choice Contracting & Clean Services WLL – Qatar | Powered by Al Bakith Contracting WLL – Dubai | Since 2010',
@@ -60,15 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero-title': 'رايت تشويس<br>للمقاولات', 'hero-subtitle': 'موثوقون منذ 2010 (دبي) والآن في قطر', 'hero-desc': 'التميز في خدمات البناء وإدارة المرافق', 'hero-button': 'اكتشف خدماتنا',
             'gm-welcome': 'كلمة ترحيب من مديرنا العام', 'gm-message': '"بأكثر من عقد من الخبرة من فرعنا الرئيسي في دبي (البقيث للمقاولات ذ.م.م، تأسست 2010)، نفخر بتقديم نفس التميز في قطر. تلتزم رايت تشويس بالجودة والسلامة وتسليم كل مشروع في الوقت المحدد."',
             'services-title': 'خدماتنا', 'services-subtitle': 'حلول شاملة لجميع احتياجاتكم في البناء وإدارة المرافق',
-            'service-construction': 'مقاولات البناء', 'service-construction-desc': 'مشاريع سكنية وتجارية (فلل وغيرها)', 'service-villa': 'تطوير الفلل', 'service-villa-desc': 'خدمات تصميم وبناء الفلل المخصصة', 'service-labour': 'توريد العمالة', 'service-labour-desc': 'قوى عاملة ماهرة وموثوقة', 'service-cleaning': 'خدمات التنظيف', 'service-cleaning-desc': 'حلول تنظيف المكاتب والتنظيف العنكبوتي', 'service-electrical': 'الأعمال الكهربائية', 'service-electrical-desc': 'تركيب وصيانة كهربائية كاملة', 'service-mechanical': 'الأعمال الميكانيكية', 'service-mechanical-desc': 'حلول التكييف والأنظمة الميكانيكية', 'service-plumbing': 'السباكة', 'service-plumbing-desc': 'تركيب وصيانة أنظمة السباكة', 'service-fitout': 'التشطيبات الداخلية', 'service-fitout-desc': 'جميع أنواع الأعمال الداخلية', 'service-demolition': 'الهدم', 'service-demolition-desc': 'عمليات هدم آمنة ومدروسة', 'service-excavation': 'الحفريات', 'service-excavation-desc': 'حلول أعمال الحفر وتسوية الأراضي',
+            'service-construction': 'مقاولات البناء', 'service-construction-desc': 'مشاريع سكنية وتجارية', 'service-villa': 'تطوير الفلل', 'service-villa-desc': 'تصميم وبناء الفلل المخصصة', 'service-labour': 'توريد العمالة', 'service-labour-desc': 'قوى عاملة ماهرة وموثوقة', 'service-cleaning': 'خدمات التنظيف', 'service-cleaning-desc': 'حلول تنظيف المكاتب والتنظيف العنكبوتي', 'service-electrical': 'الأعمال الكهربائية', 'service-electrical-desc': 'تركيب وصيانة كاملة', 'service-mechanical': 'الأعمال الميكانيكية', 'service-mechanical-desc': 'حلول التكييف والأنظمة الميكانيكية', 'service-plumbing': 'السباكة', 'service-plumbing-desc': 'تركيب وصيانة الأنظمة', 'service-fitout': 'التشطيبات الداخلية', 'service-fitout-desc': 'جميع أنواع الأعمال الداخلية', 'service-demolition': 'الهدم', 'service-demolition-desc': 'عمليات هدم آمنة ومدروسة', 'service-excavation': 'الحفريات', 'service-excavation-desc': 'حلول أعمال الحفر وتسوية الأراضي',
             'team-title': 'فريقنا', 'team-subtitle': 'نفخر بقوتنا العاملة المتفانية، التي تجمع بين الكفاءة والمهارة والالتزام بالسلامة',
             'team-stat1': 'عامل ماهر', 'team-stat2': 'موظف إداري وميداني', 'team-stat3': 'مشاريع قيد التنفيذ',
             'projects-title': 'مشاريعنا', 'projects-subtitle': 'نعرض خبرتنا وجودتنا من خلال أعمالنا المنجزة',
             'filter-all': 'الكل', 'filter-construction': 'بناء', 'filter-cleaning': 'تنظيف', 'filter-mep': 'كهروميكانيكية', 'filter-interior': 'داخلي',
             'clients-title': 'عملاؤنا الكرام', 'clients-subtitle': 'نتشرف بالعمل مع بعض الأسماء الرائدة في هذا المجال',
             'careers-title': 'وظائف في رايت تشويس', 'careers-subtitle': 'انضم إلى فريقنا المتنامي في قطر!',
-            'careers-p1': 'نبحث دائمًا عن العمال المهرة والموظفين الذين يرغبون في النمو معنا. تقدم رايت تشويس رواتب تنافسية وفرصًا للنمو المهني وبيئة عمل تعاونية.', 'careers-p2': 'سواء كنت محترفًا ذا خبرة أو في بداية حياتك المهنية، نرحب بالأفراد المخلصين الذين يشاركوننا التزامنا بالجودة والتميز.',
-            'form-title': 'قدم الآن', 'form-name': 'الاسم الكامل', 'form-position': 'الوظيفة المتقدم لها', 'form-contact': 'رقم الاتصال', 'form-email': 'البريد الإلكتروني', 'form-cv': 'تحميل السيرة الذاتية', 'form-message': 'رسالة', 'form-submit': 'إرسال الطلب', 'form-submitting': 'جاري الإرسال...', 'form-success': 'شكرًا لك! تم إرسال طلبك بنجاح.', 'form-error': 'حدث خطأ. يرجى المحاولة مرة أخرى.', 'contact-form-success': 'شكرًا لك! تم إرسال رسالتك بنجاح.', 'form-validation-error': 'يرجى ملء جميع الحقول المطلوبة.',
+            'careers-p1': 'نبحث دائمًا عن المحترفين الموهوبين للانضمام إلى فريقنا. إذا كنت شغوفًا بالبناء وملتزمًا بالتميز، ندعوك لتقديم سيرتك الذاتية للنظر فيها.',
+            'form-title': 'قدم سيرتك الذاتية', 'form-name': 'الاسم الكامل', 'form-contact': 'رقم الاتصال', 'form-email': 'البريد الإلكتروني', 'form-cv': 'تحميل السيرة الذاتية (PDF, DOC, DOCX)', 'form-submit': 'إرسال الطلب', 'form-submitting': 'جاري الإرسال...', 'form-success': 'شكرًا لك! تم إرسال طلبك بنجاح.', 'form-error': 'حدث خطأ. يرجى المحاولة مرة أخرى.', 'contact-form-success': 'شكرًا لك! تم إرسال رسالتك بنجاح.', 'form-validation-error': 'يرجى ملء جميع الحقول المطلوبة.',
             'contact-title': 'اتصل بنا', 'contact-subtitle': 'تواصل مع فريقنا للاستفسارات أو لمناقشة المشاريع',
             'contact-location': 'الموقع', 'contact-email': 'البريد الإلكتروني', 'contact-website': 'الموقع الإلكتروني', 'contact-phone': 'الهاتف', 'contact-hours': 'ساعات العمل', 'contact-hours-p': 'السبت إلى الأربعاء 8 صباحًا - 5 مساءً<br>الخميس 8 صباحًا - 2 مساءً<br>الجمعة - عطلة',
             'footer-text': '© 2024 رايت تشويس للمقاولات وخدمات التنظيف ذ.م.م - قطر | بدعم من البقيث للمقاولات ذ.م.م - دبي | منذ 2010',
@@ -83,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const key = el.dataset.translateKey;
             const translation = translations[lang][key];
             if (translation) {
-                // Use innerHTML for keys that contain HTML tags like <br>
                 if (key === 'hero-title' || key === 'contact-hours-p') {
                     el.innerHTML = translation;
                 } else {
@@ -134,7 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Scroll down button in hero section
     if (scrollDownBtn) {
         scrollDownBtn.addEventListener('click', () => {
             const servicesSection = document.querySelector('#services');
@@ -150,14 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleScroll = () => {
         const scrollY = window.scrollY;
         const navHeight = navbar.offsetHeight;
-
-        // Navbar style change
         navbar.classList.toggle('nav-scrolled', scrollY > 50);
-
-        // Back to top button visibility
         backToTopButton.classList.toggle('visible', scrollY > 300);
-
-        // Active nav link highlighting
         let currentSectionId = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop - navHeight - 150;
@@ -179,22 +161,14 @@ document.addEventListener('DOMContentLoaded', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             const filterValue = button.getAttribute('data-filter');
-
             projectItems.forEach(item => {
                 const shouldBeVisible = filterValue === 'all' || item.classList.contains(filterValue);
-                item.classList.toggle('hidden', !shouldBeVisible);
                 if (shouldBeVisible) {
                     item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'scale(1)';
-                    }, 10);
+                    setTimeout(() => { item.classList.remove('hidden'); }, 10);
                 } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'scale(0.8)';
-                     setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300); // Corrected from 400 to match CSS transition
+                    item.classList.add('hidden');
+                    setTimeout(() => { item.style.display = 'none'; }, 300);
                 }
             });
         });
@@ -205,10 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
         fileInput.addEventListener('change', (e) => {
             const fileName = e.target.files[0] ? e.target.files[0].name : 'No file selected';
             fileNameDisplay.textContent = fileName;
-            
             fileNameDisplay.closest('.file-upload-ui').classList.toggle('has-file', e.target.files.length > 0);
         });
-        
         browseBtn.addEventListener('click', (e) => {
             e.preventDefault();
             fileInput.click();
@@ -218,55 +190,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- FORM HANDLING ---
     const handleFormSubmit = (form, messageArea) => {
         if (!form || !messageArea) return;
-        
         const submitButton = form.querySelector('button[type="submit"]');
-        
         const showFormMessage = (type, messageText) => {
             messageArea.innerHTML = `<div class="form-feedback ${type}"><i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-times-circle'}"></i> ${messageText}</div>`;
             messageArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         };
-        
         const clearFormErrors = () => {
             form.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
         };
-
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             clearFormErrors();
             messageArea.innerHTML = '';
             let isValid = true;
             const currentLang = document.documentElement.lang;
-            
             const requiredFields = form.querySelectorAll('[required]');
             requiredFields.forEach(input => {
                 const isFile = input.type === 'file';
                 const hasValue = isFile ? input.files.length > 0 : input.value.trim() !== '';
                 if (!hasValue) {
                     isValid = false;
-                    const fieldWithError = input.closest('.form-group') || input;
-                    fieldWithError.classList.add('error');
-                    
-                    if(isFile) {
+                    const fieldWithError = input.closest('.form-group');
+                    if (fieldWithError) {
+                        fieldWithError.classList.add('error');
+                    }
+                    if (isFile) {
                         input.closest('.file-upload-wrapper').querySelector('.file-upload-ui').classList.add('error');
                     }
                 }
             });
-
             if (isValid) {
                 const originalButtonText = submitButton.textContent;
                 const submittingText = translations[currentLang]['form-submitting'] || 'Submitting...';
                 submitButton.disabled = true;
                 submitButton.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${submittingText}`;
-                
                 try {
                     await new Promise(resolve => setTimeout(resolve, 1500));
-                    
                     const successKey = form.id === 'job-application-form' ? 'form-success' : 'contact-form-success';
                     const successMessage = translations[currentLang][successKey] || 'Success!';
                     showFormMessage('success', successMessage);
-
                     form.reset();
-                    
                     if (fileNameDisplay) {
                         fileNameDisplay.textContent = 'No file selected';
                         fileNameDisplay.closest('.file-upload-ui').classList.remove('has-file');
@@ -283,21 +246,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 showFormMessage('error', validationErrorMessage);
             }
         });
-
         form.addEventListener('input', (e) => {
-            if (e.target.closest('.error')) {
-                e.target.closest('.error').classList.remove('error');
-            }
-             if (e.target.type === 'file' && e.target.closest('.file-upload-wrapper').querySelector('.error')) {
-                e.target.closest('.file-upload-wrapper').querySelector('.error').classList.remove('error');
+            const errorElement = e.target.closest('.error');
+            if (errorElement) {
+                errorElement.classList.remove('error');
             }
         });
     };
-
-    if (jobApplicationForm) {
-        handleFormSubmit(jobApplicationForm, jobApplicationForm.querySelector('.form-message-area'));
-    }
-    
+    if (jobApplicationForm) handleFormSubmit(jobApplicationForm, jobApplicationForm.querySelector('.form-message-area'));
     if (contactForm) {
         let messageArea = contactForm.querySelector('.form-message-area');
         if (!messageArea) {
@@ -312,19 +268,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const elementsToAnimate = document.querySelectorAll('.service-card, .stat-card, .contact-item, .project-item, .value-item');
     elementsToAnimate.forEach((el, index) => {
         el.style.setProperty('--i', index % 5 + 1);
-        
-        if (el.classList.contains('service-card')) {
+        el.style.opacity = '0';
+        if (el.classList.contains('service-card') || el.classList.contains('value-item')) {
             el.style.transform = 'translateY(30px)';
         } else if (el.classList.contains('contact-item')) {
             el.style.transform = 'translateX(-30px)';
         } else if (el.classList.contains('project-item')) {
             el.style.transform = 'scale(0.9)';
-        } else if (el.classList.contains('value-item')) {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
         }
     });
-    
     const appearOnScroll = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -338,7 +290,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
     elementsToAnimate.forEach(el => appearOnScroll.observe(el));
     
     // --- INITIALIZATION ---
@@ -346,11 +297,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const savedLang = localStorage.getItem('preferredLanguage') || 'en';
         applyTranslations(savedLang);
         handleScroll();
-        
-        if (fileInput && fileInput.files.length > 0 && fileNameDisplay) {
-            fileNameDisplay.textContent = fileInput.files[0].name;
-            fileNameDisplay.closest('.file-upload-ui').classList.add('has-file');
-        }
     };
     
     initializePage();
