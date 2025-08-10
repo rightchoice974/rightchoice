@@ -677,45 +677,6 @@ section { padding: var(--section-spacing) 0; position: relative; overflow-x: hid
     }
 }
 
-@media (max-width: 768px) {
-    .footer-nav {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    
-    .footer-bottom-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-    
-    .footer-bottom-links {
-        justify-content: center;
-    }
-}
-
-/* =========== Back to Top Button =========== */
-#back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background-color: var(--primary-color); color: var(--white); border: none; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.4s ease; z-index: 999; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); }
-[dir="rtl"] #back-to-top { right: auto; left: 30px; }
-#back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-#back-to-top:hover { background-color: var(--primary-dark); transform: translateY(-5px); }
-
-/* =========== Animations & Keyframes =========== */
-@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(calc(-250px * 10)); } }
-@keyframes scroll-rtl { from { transform: translateX(0); } to { transform: translateX(calc(250px * 10)); } }
-@keyframes shake { 0%, 100% { transform: translateX(0); } 25%, 75% { transform: translateX(-8px); } 50% { transform: translateX(8px); } }
-@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); } 40% { transform: translateY(-10px) translateX(-50%); } 60% { transform: translateY(-5px) translateX(-50%); } }
-@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-.pulse-animation { animation: pulse 2s infinite; }
-
-/* =========== Responsive Styles =========== */
-
-/* Laptops and Desktops */
-@media (max-width: 1200px) {
-    .container { width: 95%; }
-}
-
-/* Tablets and small laptops */
 @media (max-width: 992px) {
     .hero-content { flex-direction: column; text-align: center; }
     .hero-text { margin-bottom: 2rem; }
@@ -739,11 +700,17 @@ section { padding: var(--section-spacing) 0; position: relative; overflow-x: hid
 /* Small tablets and large phones */
 @media (max-width: 768px) {
     :root { --nav-height: 80px; }
-    .hero-stats { flex-direction: column; gap: 1rem; }
-    .hero-stat:not(:last-child) { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 1rem; }
-    [dir="rtl"] .hero-stat:not(:last-child) { border-left: none; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
     
-    .project-gallery { grid-template-columns: 1fr; }
+    /* MODIFIED: Keep hero stats in a row */
+    .hero-stats { gap: 0.5rem; }
+    .hero-stat { padding: 1rem 0.5rem; }
+    
+    /* REMOVED STACKING RULES FOR HERO STATS */
+
+    /* MODIFIED: Project gallery to 2 columns */
+    .project-gallery { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
     
     .logo-slider .logo-track { width: calc(200px * 20); animation-duration: 40s; }
     .logo-slide { width: 200px; }
@@ -751,6 +718,22 @@ section { padding: var(--section-spacing) 0; position: relative; overflow-x: hid
     @keyframes scroll-rtl { to { transform: translateX(calc(200px * 10)); } }
     
     .footer-about { grid-column: span 1; }
+
+    /* MODIFIED: Footer nav to 2 columns */
+    .footer-nav {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .footer-bottom-links {
+        justify-content: center;
+    }
 }
 
 /* Mobile phones */
@@ -758,8 +741,14 @@ section { padding: var(--section-spacing) 0; position: relative; overflow-x: hid
     :root { --nav-height: 70px; }
     
     .hero-tagline-small { font-size: 0.85rem; }
-    
-    .stats-container { flex-direction: column; gap: 2rem; }
+
+    /* MODIFIED: Keep hero and team stats in rows */
+    .hero-stat .stat-value { font-size: 2rem; }
+    .hero-stat .stat-label { font-size: 0.8rem; }
+    .stats-container { gap: 1rem; }
+    .stat-card { padding: 1.5rem 0.5rem; }
+    .stat-number { font-size: 2.5rem; }
+    .stat-title { font-size: 1rem; }
     
     .application-form, .contact-form { padding: 2rem 1.5rem; }
     
@@ -769,29 +758,61 @@ section { padding: var(--section-spacing) 0; position: relative; overflow-x: hid
     @keyframes scroll-rtl { to { transform: translateX(calc(150px * 10)); } }
     .logo-slider::before, .logo-slider::after { width: 50px; }
 
-    /* New rules for 2-column service cards on mobile */
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
+    .service-card { padding: 2rem 1rem; }
+    .service-icon { width: 60px; height: 60px; font-size: 1.5rem; margin-bottom: 1.2rem; }
+    .service-card h3 { font-size: 1.1rem; }
+    .service-card p { font-size: 0.85rem; line-height: 1.5; }
 
-    .service-card {
-        padding: 2rem 1rem;
+    /* MODIFIED: Team Values 3-in-a-row */
+    .team-values {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    .value-item {
+        padding: 1.5rem 0.5rem;
+        text-align: center;
+    }
+    .value-icon {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+    .value-item h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    .value-item p {
+        font-size: 0.75rem;
+        line-height: 1.3;
     }
 
-    .service-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-        margin-bottom: 1.2rem;
+    /* MODIFIED: Project gallery 3-in-a-row */
+    .project-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
     }
-
-    .service-card h3 {
-        font-size: 1.1rem;
+    .project-item {
+        height: 140px;
     }
-
-    .service-card p {
-        font-size: 0.85rem;
-        line-height: 1.5;
+    .project-overlay {
+        padding: 1rem 0.5rem;
+        transform: translateY(0);
+        background: linear-gradient(to top, rgba(15, 42, 78, 0.98), rgba(15, 42, 78, 0.6));
+    }
+    .project-overlay h3 {
+        font-size: 0.8rem;
+        line-height: 1.2;
+        margin-bottom: 0.4rem;
+    }
+    .project-overlay p,
+    .project-category {
+        display: none;
+    }
+    .project-link {
+        font-size: 0.7rem;
+        padding-bottom: 1px;
     }
 }
