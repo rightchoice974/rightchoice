@@ -701,13 +701,9 @@ section { padding: var(--section-spacing) 0; position: relative; overflow-x: hid
 @media (max-width: 768px) {
     :root { --nav-height: 80px; }
     
-    /* MODIFIED: Keep hero stats in a row */
     .hero-stats { gap: 0.5rem; }
     .hero-stat { padding: 1rem 0.5rem; }
-    
-    /* REMOVED STACKING RULES FOR HERO STATS */
 
-    /* MODIFIED: Project gallery to 2 columns */
     .project-gallery { 
         grid-template-columns: repeat(2, 1fr); 
     }
@@ -719,7 +715,6 @@ section { padding: var(--section-spacing) 0; position: relative; overflow-x: hid
     
     .footer-about { grid-column: span 1; }
 
-    /* MODIFIED: Footer nav to 2 columns */
     .footer-nav {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
@@ -742,11 +737,19 @@ section { padding: var(--section-spacing) 0; position: relative; overflow-x: hid
     
     .hero-tagline-small { font-size: 0.85rem; }
 
-    /* MODIFIED: Keep hero and team stats in rows */
     .hero-stat .stat-value { font-size: 2rem; }
     .hero-stat .stat-label { font-size: 0.8rem; }
-    .stats-container { gap: 1rem; }
-    .stat-card { padding: 1.5rem 0.5rem; }
+    
+    /* CORRECTED: Force Team Stats to be 3-in-a-row */
+    .stats-container {
+        gap: 1rem;
+        flex-wrap: nowrap; /* Prevent wrapping to new line */
+    }
+    .stat-card {
+        padding: 1.5rem 0.5rem;
+        min-width: 0; /* Remove min-width to allow shrinking */
+        flex-basis: 33.33%; /* Each card takes 1/3 of the space */
+    }
     .stat-number { font-size: 2.5rem; }
     .stat-title { font-size: 1rem; }
     
@@ -767,7 +770,6 @@ section { padding: var(--section-spacing) 0; position: relative; overflow-x: hid
     .service-card h3 { font-size: 1.1rem; }
     .service-card p { font-size: 0.85rem; line-height: 1.5; }
 
-    /* MODIFIED: Team Values 3-in-a-row */
     .team-values {
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
@@ -789,7 +791,6 @@ section { padding: var(--section-spacing) 0; position: relative; overflow-x: hid
         line-height: 1.3;
     }
 
-    /* MODIFIED: Project gallery 3-in-a-row */
     .project-gallery {
         grid-template-columns: repeat(3, 1fr);
         gap: 0.5rem;
