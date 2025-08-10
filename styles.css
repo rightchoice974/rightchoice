@@ -102,7 +102,7 @@ img { max-width: 100%; height: auto; display: block; }
 .section-header p { font-size: clamp(1rem, 2.5vw, 1.2rem); color: var(--grey-color); max-width: 700px; margin: 1.2rem auto 0; font-weight: 300; line-height: 1.6; }
 .section-header.light h2, .section-header.light p { color: var(--white); }
 .section-header.light h2::after { background: var(--secondary-color); }
-section { padding: var(--section-spacing) 0; position: relative; }
+section { padding: var(--section-spacing) 0; position: relative; overflow-x: hidden; }
 
 /* --- Buttons --- */
 .btn { display: inline-block; padding: 1rem 2.2rem; font-weight: 500; border-radius: var(--border-radius); cursor: pointer; transition: var(--transition); text-align: center; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1.5px; border: none; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07); }
@@ -185,10 +185,24 @@ section { padding: var(--section-spacing) 0; position: relative; }
 /* =========== Team Stats Section =========== */
 .team-stats { background: linear-gradient(135deg, var(--primary-dark), var(--primary-color)); color: var(--white); }
 .stats-container { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 2rem; margin-bottom: 5rem; }
-.stat-card { text-align: center; padding: 2.5rem; flex: 1; min-width: 250px; opacity: 0; transition: var(--transition); position: relative; background: rgba(255, 255, 255, 0.05); border-radius: var(--border-radius); backdrop-filter: blur(5px); }
+.stat-card {
+    text-align: center;
+    padding: 2.5rem;
+    flex: 1;
+    min-width: 250px;
+    opacity: 0;
+    transition: var(--transition);
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .stat-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.1); }
 .stat-number { font-size: clamp(3rem, 8vw, 4rem); font-weight: 700; color: var(--secondary-color); margin-bottom: 0.8rem; font-family: var(--heading-font); }
-.stat-title { font-size: 1.2rem; font-weight: 400; }
+.stat-title { font-size: 1.2rem; font-weight: 400; overflow-wrap: break-word; }
 .stat-icon { position: absolute; top: 20px; right: 20px; font-size: 1.5rem; color: rgba(255, 255, 255, 0.2); }
 [dir="rtl"] .stat-icon { right: auto; left: 20px; }
 
@@ -197,7 +211,7 @@ section { padding: var(--section-spacing) 0; position: relative; }
 .value-item:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-5px); }
 .value-icon { font-size: 2rem; color: var(--secondary-color); margin-bottom: 1rem; }
 .value-item h3 { color: var(--white); font-size: 1.4rem; margin-bottom: 0.8rem; }
-.value-item p { color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; }
+.value-item p { color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; overflow-wrap: break-word; }
 
 /* =========== Projects Section =========== */
 .projects { background-color: var(--light-color); }
