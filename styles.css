@@ -130,7 +130,7 @@ section { padding: var(--section-spacing) 0; position: relative; overflow-x: hid
 .nav-toggle { display: none; color: var(--primary-color); font-size: 1.5rem; cursor: pointer; background: transparent; border: none; z-index: 1001; }
 
 /* =========== Hero Section =========== */
-.hero { min-height: 100vh; display: flex; align-items: center; background: url('kate-trysh-70vza4NysS8-unsplash.jpg') no-repeat center center/cover; background-attachment: fixed; position: relative; padding-top: var(--nav-height); }
+.hero { min-height: 100vh; display: flex; align-items: center; background: url('kate-trysh-70vza4NysS8-unsplash.jpg') no-repeat center center/cover; background-attachment: fixed; position: relative; padding-top: calc(var(--nav-height) + 3rem); padding-bottom: 3rem; }
 .hero .overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(15, 42, 78, 0.95), rgba(30, 77, 140, 0.7)); }
 .hero-content { position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 3rem; width: 100%; margin-bottom: 4rem; }
 .hero-text { flex: 1 1 50%; min-width: 320px; }
