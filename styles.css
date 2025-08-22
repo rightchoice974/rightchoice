@@ -204,18 +204,42 @@ section {
 
 /* =========== Clients Section =========== */
 .clients { background-color: var(--dark-color); }
-.logo-slider { overflow: hidden; padding: 3rem 0; position: relative; width: 100%; }
-.logo-slider::before, .logo-slider::after { content: ''; position: absolute; top: 0; width: 100px; height: 100%; z-index: 2; }
-.logo-slider::before { left: 0; background: linear-gradient(to right, var(--dark-color), transparent); }
-[dir="rtl"] .logo-slider::before { left: auto; right: 0; background: linear-gradient(to left, var(--dark-color), transparent); }
-.logo-slider::after { right: 0; background: linear-gradient(to left, var(--dark-color), transparent); }
-[dir="rtl"] .logo-slider::after { right: auto; left: 0; background: linear-gradient(to right, var(--dark-color), transparent); }
-.logo-slider .logo-track { display: flex; align-items: center; width: calc(250px * 20); animation: scroll 50s linear infinite; }
-[dir="rtl"] .logo-slider .logo-track { animation-name: scroll-rtl; }
-.logo-slider:hover .logo-track { animation-play-state: paused; }
-.logo-slide { height: 90px; width: 250px; display: flex; align-items: center; justify-content: center; padding: 0 2rem; }
-.logo-slide img { max-height: 70%; max-width: 90%; object-fit: contain; filter: brightness(0) invert(1) grayscale(1); opacity: 0.6; transition: all 0.4s ease; }
-.logo-slide:hover img { opacity: 1; transform: scale(1.1); }
+
+.client-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.client-logo-item {
+    background: rgba(91, 159, 238, 0.493);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.client-logo-item:hover {
+    background: rgba(255, 255, 255, 0.644);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.client-logo-item img {
+    max-width: 100%;
+    max-height: 90px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.client-logo-item:hover img {
+    transform: scale(1.05);
+}
 
 /* =========== Careers Section =========== */
 .careers-content { display: flex; flex-wrap: wrap; gap: 4rem; align-items: center; }
@@ -309,8 +333,6 @@ section {
 #back-to-top:hover { background-color: var(--primary-dark); transform: translateY(-5px); }
 
 /* =========== Animations & Keyframes =========== */
-@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(calc(-250px * 10)); } }
-@keyframes scroll-rtl { from { transform: translateX(0); } to { transform: translateX(calc(250px * 10)); } }
 @keyframes shake { 0%, 100% { transform: translateX(0); } 25%, 75% { transform: translateX(-8px); } 50% { translateX(8px); } }
 @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); } 40% { transform: translateY(-10px) translateX(-50%); } 60% { transform: translateY(-5px) translateX(-50%); } }
 @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
@@ -350,10 +372,6 @@ section {
     .hero-stats { gap: 0.5rem; }
     .hero-stat { padding: 1rem 0.5rem; }
     .project-gallery { grid-template-columns: repeat(2, 1fr); }
-    .logo-slider .logo-track { width: calc(200px * 20); animation-duration: 40s; }
-    .logo-slide { width: 200px; }
-    @keyframes scroll { to { transform: translateX(calc(-200px * 10)); } }
-    @keyframes scroll-rtl { to { transform: translateX(calc(200px * 10)); } }
     .footer-nav { grid-template-columns: repeat(2, 1fr); }
     .footer-bottom-content { flex-direction: column; text-align: center; gap: 1rem; }
     .footer-bottom-links { justify-content: center; }
@@ -371,11 +389,14 @@ section {
     .stat-number { font-size: 2.5rem; }
     .stat-title { font-size: 1rem; }
     .application-form, .contact-form { padding: 2rem 1.5rem; }
-    .logo-slider .logo-track { width: calc(150px * 20); animation-duration: 35s; }
-    .logo-slide { width: 150px; }
-    @keyframes scroll { to { transform: translateX(calc(-150px * 10)); } }
-    @keyframes scroll-rtl { to { transform: translateX(calc(150px * 10)); } }
-    .logo-slider::before, .logo-slider::after { width: 50px; }
+    .client-logo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+    .client-logo-item {
+        height: 120px;
+        padding: 1rem;
+    }
     .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
     .service-card { padding: 2rem 1rem; }
     .service-icon { width: 60px; height: 60px; font-size: 1.5rem; margin-bottom: 1.2rem; }
@@ -393,4 +414,5 @@ section {
     .project-overlay p, .project-category { display: none; }
     .project-link { font-size: 0.7rem; padding-bottom: 1px; }
     .footer-nav { grid-template-columns: 1fr; }
+    
 }
