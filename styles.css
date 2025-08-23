@@ -241,6 +241,23 @@ section {
     transform: scale(1.05);
 }
 
+/* =========== License Section =========== */
+.license {
+    background-color: var(--light-color);
+}
+.license-content {
+    text-align: center;
+    margin-top: -1rem;
+}
+.license-content .btn i {
+    margin-right: 0.8rem;
+}
+[dir="rtl"] .license-content .btn i {
+    margin-right: 0;
+    margin-left: 0.8rem;
+}
+
+
 /* =========== Careers Section =========== */
 .careers-content { display: flex; flex-wrap: wrap; gap: 4rem; align-items: center; }
 .careers-text { flex: 1 1 45%; min-width: 300px; }

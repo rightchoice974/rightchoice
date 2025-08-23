@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- TRANSLATION DATA ---
     const translations = {
         en: {
-            'nav-home': 'Home', 'nav-services': 'Services', 'nav-team': 'Our Team', 'nav-projects': 'Projects', 'nav-clients': 'Our Clients', 'nav-careers': 'Careers', 'nav-contact': 'Contact', 'lang-switch': 'عربي',
+            'nav-home': 'Home', 'nav-services': 'Services', 'nav-team': 'Our Team', 'nav-projects': 'Projects', 'nav-clients': 'Our Clients', 'nav-license': 'Our License', 'nav-careers': 'Careers', 'nav-contact': 'Contact', 'lang-switch': 'عربي',
             'hero-title': 'Right Choice<br>Contracting', 'hero-subtitle': 'Trusted Since 2010 (Dubai) Now in Qatar', 'hero-desc': 'Excellence in Construction & Facility Management Services', 'hero-button': 'Explore Our Services',
             'gm-welcome': 'Welcome from Our General Manager', 'gm-message': '"With over a decade of experience from our main branch in Dubai (Al Bakith Contracting WLL, est. 2010), we are proud to bring the same excellence to Qatar. Right Choice is committed to quality, safety, and timely delivery of every project."',
             'services-title': 'Our Services', 'services-subtitle': 'Comprehensive solutions for all your construction and facility management needs',
@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'projects-title': 'Our Projects', 'projects-subtitle': 'Showcasing our expertise and quality through completed works',
             'filter-all': 'All', 'filter-construction': 'Construction', 'filter-cleaning': 'Cleaning', 'filter-mep': 'MEP Works', 'filter-interior': 'Interior',
             'clients-title': 'Our Valued Clients', 'clients-subtitle': 'We are honored to have worked with some of the leading names in the industry',
+            'license-tag': 'Official Document', 'license-title': 'Our Commercial License', 'license-subtitle': 'Download our official commercial license for verification and records.', 'license-button': 'Download License (PDF)',
             'careers-title': 'Careers at Right Choice', 'careers-subtitle': 'Join Our Growing Team in Qatar!',
             'careers-p1': 'We are always looking for talented professionals to join our team. If you are passionate about construction and dedicated to excellence, we invite you to submit your CV for our consideration.',
             'form-title': 'Submit Your CV', 'form-name': 'Full Name', 'form-contact': 'Contact Number', 'form-email': 'Email Address', 'form-cv': 'CV Upload (PDF, DOC, DOCX)', 'form-submit': 'Submit Application', 'form-submitting': 'Submitting...', 'form-success': 'Thank you! Your application has been submitted successfully.', 'form-error': 'An error occurred. Please try again.', 'contact-form-success': 'Thank you! Your message has been sent successfully.', 'form-validation-error': 'Please fill in all required fields.',
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'footer-text': '© 2024 Right Choice Contracting & Clean Services WLL – Qatar | Powered by Al Bakith Contracting WLL – Dubai | Since 2010',
         },
         ar: {
-            'nav-home': 'الرئيسية', 'nav-services': 'خدماتنا', 'nav-team': 'فريقنا', 'nav-projects': 'مشاريعنا', 'nav-clients': 'عملاؤنا', 'nav-careers': 'وظائف', 'nav-contact': 'اتصل بنا', 'lang-switch': 'English',
+            'nav-home': 'الرئيسية', 'nav-services': 'خدماتنا', 'nav-team': 'فريقنا', 'nav-projects': 'مشاريعنا', 'nav-clients': 'عملاؤنا', 'nav-license': 'رخصتنا', 'nav-careers': 'وظائف', 'nav-contact': 'اتصل بنا', 'lang-switch': 'English',
             'hero-title': 'رايت تشويس<br>للمقاولات', 'hero-subtitle': 'موثوقون منذ 2010 (دبي) والآن في قطر', 'hero-desc': 'التميز في خدمات البناء وإدارة المرافق', 'hero-button': 'اكتشف خدماتنا',
             'gm-welcome': 'كلمة ترحيب من مديرنا العام', 'gm-message': '"بأكثر من عقد من الخبرة من فرعنا الرئيسي في دبي (البقيث للمقاولات ذ.م.م، تأسست 2010)، نفخر بتقديم نفس التميز في قطر. تلتزم رايت تشويس بالجودة والسلامة وتسليم كل مشروع في الوقت المحدد."',
             'services-title': 'خدماتنا', 'services-subtitle': 'حلول شاملة لجميع احتياجاتكم في البناء وإدارة المرافق',
@@ -56,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'projects-title': 'مشاريعنا', 'projects-subtitle': 'نعرض خبرتنا وجودتنا من خلال أعمالنا المنجزة',
             'filter-all': 'الكل', 'filter-construction': 'بناء', 'filter-cleaning': 'تنظيف', 'filter-mep': 'كهروميكانيكية', 'filter-interior': 'داخلي',
             'clients-title': 'عملاؤنا الكرام', 'clients-subtitle': 'نتشرف بالعمل مع بعض الأسماء الرائدة في هذا المجال',
+            'license-tag': 'وثيقة رسمية', 'license-title': 'رخصتنا التجارية', 'license-subtitle': 'قم بتنزيل رخصتنا التجارية الرسمية للتحقق والسجلات.', 'license-button': 'تحميل الرخصة (PDF)',
             'careers-title': 'وظائف في رايت تشويس', 'careers-subtitle': 'انضم إلى فريقنا المتنامي في قطر!',
             'careers-p1': 'نبحث دائمًا عن المحترفين الموهوبين للانضمام إلى فريقنا. إذا كنت شغوفًا بالبناء وملتزمًا بالتميز، ندعوك لتقديم سيرتك الذاتية للنظر فيها.',
             'form-title': 'قدم سيرتك الذاتية', 'form-name': 'الاسم الكامل', 'form-contact': 'رقم الاتصال', 'form-email': 'البريد الإلكتروني', 'form-cv': 'تحميل السيرة الذاتية (PDF, DOC, DOCX)', 'form-submit': 'إرسال الطلب', 'form-submitting': 'جاري الإرسال...', 'form-success': 'شكرًا لك! تم إرسال طلبك بنجاح.', 'form-error': 'حدث خطأ. يرجى المحاولة مرة أخرى.', 'contact-form-success': 'شكرًا لك! تم إرسال رسالتك بنجاح.', 'form-validation-error': 'يرجى ملء جميع الحقول المطلوبة.',
