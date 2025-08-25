@@ -56,14 +56,15 @@ function loadSubmissions() {
             const data = childSnapshot.val();
             const date = new Date(data.submittedAt).toLocaleString();
             
+            // MODIFIED: Added data-label attributes to each <td> for mobile responsiveness
             const row = `
                 <tr>
-                    <td><i class="fas fa-circle status-toggle ${data.status}" data-key="${key}" data-path="applications" title="Click to toggle status"></i></td>
-                    <td>${data.name || ''}</td>
-                    <td>${data.contact || ''}</td>
-                    <td>${data.email || ''}</td>
-                    <td>${date}</td>
-                    <td><button class="action-btn delete-btn" data-key="${key}" data-path="applications"><i class="fas fa-trash-alt"></i></button></td>
+                    <td data-label="Status"><i class="fas fa-circle status-toggle ${data.status}" data-key="${key}" data-path="applications" title="Click to toggle status"></i></td>
+                    <td data-label="Name">${data.name || ''}</td>
+                    <td data-label="Contact">${data.contact || ''}</td>
+                    <td data-label="Email">${data.email || ''}</td>
+                    <td data-label="Submitted">${date}</td>
+                    <td data-label="Actions"><button class="action-btn delete-btn" data-key="${key}" data-path="applications"><i class="fas fa-trash-alt"></i></button></td>
                 </tr>
             `;
             tableBody.insertAdjacentHTML('afterbegin', row);
@@ -83,15 +84,16 @@ function loadSubmissions() {
             const data = childSnapshot.val();
             const date = new Date(data.submittedAt).toLocaleString();
 
+            // MODIFIED: Added data-label attributes to each <td> for mobile responsiveness
             const row = `
                 <tr>
-                    <td><i class="fas fa-circle status-toggle ${data.status}" data-key="${key}" data-path="messages" title="Click to toggle status"></i></td>
-                    <td>${data.name || ''}</td>
-                    <td>${data.email || ''}</td>
-                    <td>${data.subject || ''}</td>
-                    <td>${data.message || ''}</td>
-                    <td>${date}</td>
-                    <td><button class="action-btn delete-btn" data-key="${key}" data-path="messages"><i class="fas fa-trash-alt"></i></button></td>
+                    <td data-label="Status"><i class="fas fa-circle status-toggle ${data.status}" data-key="${key}" data-path="messages" title="Click to toggle status"></i></td>
+                    <td data-label="Name">${data.name || ''}</td>
+                    <td data-label="Email">${data.email || ''}</td>
+                    <td data-label="Subject">${data.subject || ''}</td>
+                    <td data-label="Message">${data.message || ''}</td>
+                    <td data-label="Submitted">${date}</td>
+                    <td data-label="Actions"><button class="action-btn delete-btn" data-key="${key}" data-path="messages"><i class="fas fa-trash-alt"></i></button></td>
                 </tr>
             `;
             tableBody.insertAdjacentHTML('afterbegin', row);
