@@ -1,7 +1,24 @@
 /*
     Right Choice Contracting - Main Script
-    Version: 3.1 (Final with Mobile Optimizations)
+    Version: 3.2 (Firebase Integration)
 */
+
+// --- START: FIREBASE INTEGRATION ---
+const firebaseConfig = {
+    apiKey: "AIzaSyBBIKs2SpE6hH_tW3qM-DQE8bHOlHoprSQ",
+    authDomain: "rightchoiceform.firebaseapp.com",
+    projectId: "rightchoiceform",
+    storageBucket: "rightchoiceform.firebasestorage.app",
+    messagingSenderId: "964021442183",
+    appId: "1:964021442183:web:298c98749c6ecb654d0a22",
+    measurementId: "G-234ZVCZWYY",
+    databaseURL: "https://rightchoiceform-default-rtdb.firebaseio.com" // IMPORTANT: Add your Database URL
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+// --- END: FIREBASE INTEGRATION ---
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -190,9 +207,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- FORM HANDLING ---
-    const handleFormSubmit = (form, messageArea) => {
+     const handleFormSubmit = (form, messageArea, dbPath) => {
         if (!form || !messageArea) return;
         const submitButton = form.querySelector('button[type="submit"]');
+
         const showFormMessage = (type, messageText) => {
             messageArea.innerHTML = `<div class="form-feedback ${type}"><i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-times-circle'}"></i> ${messageText}</div>`;
             messageArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -200,51 +218,60 @@ document.addEventListener('DOMContentLoaded', () => {
         const clearFormErrors = () => {
             form.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
         };
-        form.addEventListener('submit', async (e) => {
+
+        form.addEventListener('submit', (e) => {
             e.preventDefault();
             clearFormErrors();
             messageArea.innerHTML = '';
             let isValid = true;
             const currentLang = document.documentElement.lang;
             const requiredFields = form.querySelectorAll('[required]');
+
             requiredFields.forEach(input => {
-                const isFile = input.type === 'file';
-                const hasValue = isFile ? input.files.length > 0 : input.value.trim() !== '';
-                if (!hasValue) {
+                if (input.value.trim() === '') {
                     isValid = false;
                     const fieldWithError = input.closest('.form-group');
                     if (fieldWithError) {
                         fieldWithError.classList.add('error');
                     }
-                    if (isFile) {
-                        input.closest('.file-upload-wrapper').querySelector('.file-upload-ui').classList.add('error');
-                    }
                 }
             });
+
             if (isValid) {
-                const originalButtonText = submitButton.textContent;
-                const submittingText = translations[currentLang]['form-submitting'] || 'Submitting...';
+                const originalButtonText = submitButton.innerHTML;
+                const submittingText = translations[currentLang]?.['form-submitting'] || 'Submitting...';
                 submitButton.disabled = true;
                 submitButton.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${submittingText}`;
-                try {
-                    await new Promise(resolve => setTimeout(resolve, 1500));
-                    const successKey = form.id === 'job-application-form' ? 'form-success' : 'contact-form-success';
-                    const successMessage = translations[currentLang][successKey] || 'Success!';
-                    showFormMessage('success', successMessage);
-                    form.reset();
-                    if (fileNameDisplay) {
-                        fileNameDisplay.textContent = 'No file selected';
-                        fileNameDisplay.closest('.file-upload-ui').classList.remove('has-file');
-                    }
-                } catch (error) {
-                    const errorMessage = translations[currentLang]['form-error'] || 'An error occurred. Please try again.';
-                    showFormMessage('error', errorMessage);
-                } finally {
-                    submitButton.disabled = false;
-                    submitButton.textContent = originalButtonText;
+
+                // Create data object from form
+                const formData = new FormData(form);
+                const data = {};
+                for (let [key, value] of formData.entries()) {
+                    data[key] = value;
                 }
+                data.submittedAt = new Date().toISOString();
+                data.status = 'new'; // For admin panel tracking
+
+                // --- PUSH TO FIREBASE ---
+                database.ref(dbPath).push(data)
+                    .then(() => {
+                        const successKey = form.id === 'job-application-form' ? 'form-success' : 'contact-form-success';
+                        const successMessage = translations[currentLang]?.[successKey] || 'Success!';
+                        showFormMessage('success', successMessage);
+                        form.reset();
+                    })
+                    .catch((error) => {
+                        console.error("Firebase Error: ", error);
+                        const errorMessage = translations[currentLang]?.['form-error'] || 'An error occurred. Please try again.';
+                        showFormMessage('error', errorMessage);
+                    })
+                    .finally(() => {
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalButtonText;
+                    });
+
             } else {
-                const validationErrorMessage = translations[currentLang]['form-validation-error'] || 'Please fill in all required fields.';
+                const validationErrorMessage = translations[currentLang]?.['form-validation-error'] || 'Please fill in all required fields.';
                 showFormMessage('error', validationErrorMessage);
             }
         });
@@ -255,7 +282,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
-    if (jobApplicationForm) handleFormSubmit(jobApplicationForm, jobApplicationForm.querySelector('.form-message-area'));
+
+    if (jobApplicationForm) handleFormSubmit(jobApplicationForm, jobApplicationForm.querySelector('.form-message-area'), 'applications');
     if (contactForm) {
         let messageArea = contactForm.querySelector('.form-message-area');
         if (!messageArea) {
@@ -263,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
             messageArea.className = 'form-message-area';
             contactForm.appendChild(messageArea);
         }
-        handleFormSubmit(contactForm, messageArea);
+        handleFormSubmit(contactForm, messageArea, 'messages');
     }
 
     // --- ANIMATION ON SCROLL (INTERSECTION OBSERVER) ---
