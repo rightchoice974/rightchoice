@@ -12,6 +12,9 @@
         #logout-btn { background-color: #dc3545; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 5px; cursor: pointer; font-size: 1rem; }
         .section-container { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 2rem; }
         h2 { border-bottom: 2px solid #1e4d8c; padding-bottom: 0.5rem; margin-bottom: 1.5rem; color: #0f2a4e; }
+        
+        .table-responsive { overflow-x: auto; } /* Added for minor overflows on medium screens */
+
         table { width: 100%; border-collapse: collapse; }
         th, td { padding: 1rem; text-align: left; border-bottom: 1px solid #eef1f6; }
         th { background-color: #f8f9fd; font-weight: 600; }
@@ -24,6 +27,94 @@
         .status-toggle.read { color: #28a745; }
         #loading { text-align: center; font-size: 1.5rem; padding: 3rem; color: #5d6470; }
         .no-data { text-align: center; color: #999; padding: 2rem; }
+
+        /* --- START OF MOBILE RESPONSIVE STYLES --- */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            .dashboard-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .section-container {
+                padding: 1rem;
+            }
+
+            /* Responsive Table Transformation */
+            table {
+                border: 0;
+            }
+            table thead {
+                /* Hide the table header but keep it for accessibility */
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+            table tr {
+                display: block;
+                margin-bottom: 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                background: #ffffff;
+                border: 1px solid #eef1f6;
+            }
+            table td {
+                display: block;
+                text-align: right;
+                padding: 1rem;
+                padding-left: 50%; /* Make space for the label */
+                position: relative;
+                border-bottom: 1px solid #eef1f6;
+            }
+            table td::before {
+                /* This pseudo-element creates the table header label */
+                content: attr(data-label);
+                position: absolute;
+                left: 1rem;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: 600;
+                color: #1e4d8c;
+            }
+            table tr td:last-child {
+                border-bottom: 0;
+            }
+            
+            /* Special styling for specific cells in card view */
+            td[data-label="Status"] {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end; /* Pushes icon to the right */
+            }
+            td[data-label="Message"] {
+                 text-align: left; /* Better for long text blocks */
+            }
+            td[data-label="Actions"] {
+                text-align: center;
+                padding-left: 1rem; /* Reset padding for centered content */
+            }
+            td[data-label="Actions"]::before {
+                display: none; /* Hide the "Actions" label for a cleaner look */
+            }
+            .action-btn {
+                font-size: 1.5rem;
+                padding: 0.5rem;
+            }
+        }
+        /* --- END OF MOBILE RESPONSIVE STYLES --- */
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
